@@ -61,7 +61,7 @@ function PostThread({ userId }: Props) {
           render={({ field }) => (
             <FormItem className="flex w-full flex-col gap-3">
               <FormLabel className="text-base-semibold text-light-2">
-                Content
+                Content {organization ? `in ${organization.name}` : ""}
               </FormLabel>
               <FormControl className="no-focus border border-dark-4 bg-dark-3 text-light-1">
                 <Textarea rows={15} {...field} />
