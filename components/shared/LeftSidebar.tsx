@@ -13,6 +13,11 @@ const LeftSidebar = () => {
 
   const { userId } = useAuth();
 
+  // const handleSignOut = async () => {
+  //   await signOut();
+  //   router.push("/sign-in");
+  // };
+
   return (
     <section className="custom-scrollbar leftsidebar">
       <div className="flex w-full flex-1 flex-col gap-6 px-6">
@@ -45,8 +50,11 @@ const LeftSidebar = () => {
 
       <div className="mt-10 px-6">
         <SignedIn>
-          <SignOutButton signOutCallback={() => router.push("/sign-in")}>
-            <div className="flex cursor-pointer gap-4 p-4">
+          <SignOutButton>
+            <div
+              className="flex cursor-pointer gap-4 p-4"
+              onClick={() => router.push("/sign-in")}
+            >
               <Image
                 src="/assets/logout.svg"
                 alt="logout"
