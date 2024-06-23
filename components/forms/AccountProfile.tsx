@@ -68,8 +68,8 @@ const AccountProfile = ({ user, btnTitle }: Props) => {
 
       // try console log to see whats wrong
 
-      if (imgRes && imgRes[0].fileUrl) {
-        values.profile_photo = imgRes[0].fileUrl;
+      if (imgRes && imgRes.length > 0 && "fileUrl" in imgRes[0]) {
+        values.profile_photo = (imgRes[0] as { fileUrl: string }).fileUrl; // Type assertion
       }
     }
 
